@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import alumnosjson from './body/assets/json/alumnos.json'
 
 
 
@@ -18,7 +19,7 @@ interface ALUMNOS {
 })
 export class AppComponent {
   title = 'primera-entrega-final';
-
+alumnos: any = alumnosjson
 
  constructor(){
   

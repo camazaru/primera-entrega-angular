@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild, ElementRef, ChangeDetectorRef } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+
+import alumnos from './assets/json/alumnos.json'
+
 
 
 @Component({
@@ -8,9 +14,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BodyComponent implements OnInit {
 
+  id: any = alumnos
+
   constructor() { }
 
   ngOnInit(): void {
   }
+  
 
-}
+
+
+  }
+
