@@ -22,7 +22,11 @@ export class BodyComponent implements OnInit {
   }
   
 
+  miFuncion(id:string) {
 
+    
+    console.log(`Alumno borrado ${id}`)
+}
 
   }
 
