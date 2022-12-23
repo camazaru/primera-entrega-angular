@@ -2,8 +2,49 @@
 <h1 class=" ">Alumnos inscritos Bootcamp ANGULAR</h1>
 </div>
 
-<div>
 
+  <div class="mb-4">
+  <label for="buscar" class="">Escribe el nombre del alumno</label>
+  <input type="text" >
+  <button >Buscar</button>
+  <button>Mostrar Lista Completa de alumnos</button>
+  </div>
+  
+
+  <div class="mb-4">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Nombre</th>
+          <th scope="col">Nickname</th>
+          <th scope="col">Edad</th>
+          <th scope="col">Lugar Nacimiento</th>
+          <th scope="col">Estatus</th>
+          <th scope="col">Genero</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row"></th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><button ><mat-icon>delete</mat-icon></button> <button ><mat-icon>create</mat-icon>
+          </button> <button ><mat-icon>add_box</mat-icon></button></td>
+        </tr>
+      </tbody>
+       
+  </table>
+  </div>
+
+
+
+
+
+<div>
   <table class="table">
     <thead>
       <tr>
@@ -17,16 +58,17 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let alumnojson of id" >
+      <tr *ngFor="let alumnojson of alumnos" >
         <th scope="row">{{alumnojson.name}}</th>
         <td>{{alumnojson.id}}</td>
         <td>{{alumnojson.age}}</td>
         <td>{{alumnojson.birthplace}}</td>
         <td>{{alumnojson.status}}</td>
         <td>{{alumnojson.gendre}}</td>
-        <td><button (click)="miFuncion(id)"><mat-icon>delete</mat-icon></button> <button ><mat-icon>create</mat-icon>
+        <td><button ><mat-icon>delete</mat-icon></button> <button ><mat-icon>create</mat-icon>
         </button> <button ><mat-icon>add_box</mat-icon></button></td>
       </tr>
+      </tbody>
 
 </table>
 

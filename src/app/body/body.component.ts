@@ -3,9 +3,17 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import alumnos from './assets/json/alumnos.json'
+import alumnosjson from './assets/json/alumnos.json'
 
 
+interface ALUMNOS {
+  name: String,
+  id: string,
+  age : Number,
+  birthplace : String,
+  status : String,
+  gendre: String
+}
 
 @Component({
   selector: 'app-body',
@@ -14,7 +22,15 @@ import alumnos from './assets/json/alumnos.json'
 })
 export class BodyComponent implements OnInit {
 
-  id: any = alumnos
+alumnos: any = alumnosjson
+
+
+
+  
+
+  pruebaNumber:number=0
+  PruebaDiv:boolean=false
+ 
 
   constructor() { }
 
@@ -22,11 +38,19 @@ export class BodyComponent implements OnInit {
   }
   
 
-  miFuncion(id:string) {
 
-    
-    console.log(`Alumno borrado ${id}`)
+
+funCambio(e:any){
+  this.pruebaNumber = e;
+  console.log("dato que viene de componente contenido:", this.pruebaNumber)
+  
+  if(this.pruebaNumber==1){
+    this.PruebaDiv = true;
+  }
 }
 
-  }
+
+
+
+}
 
