@@ -11,7 +11,7 @@ export class BodyComponent {
 
 
 alumnosArray: Alumnos[] = [
-    {
+    {"id":1,
     	"name":"Alexis",
     	"age":26,
     	"birthplace":"Sonora",
@@ -19,7 +19,7 @@ alumnosArray: Alumnos[] = [
     	"gendre":"h"
     	
     	},
-    	{
+    	{"id":2,
     	"name":"Azucena",
     	"age":31,
     	"birthplace":"Jalisto",
@@ -27,7 +27,7 @@ alumnosArray: Alumnos[] = [
     	"gendre":"m"
     	
     	},
-    	{
+    	{"id":3,
     	"name":"Chucho",
        	"age":14,
     	"birthplace":"Mazatlan, Sinaloa",
@@ -35,7 +35,7 @@ alumnosArray: Alumnos[] = [
     	"gendre":"h"
     	
     	},
-    	{
+    	{"id":4,
     	"name":"Diana",
     	"age":21,
     	"birthplace":"Veracruz",
@@ -47,20 +47,25 @@ alumnosArray: Alumnos[] = [
 
 selectedAlumnos: Alumnos = new Alumnos()
 
-addOrEdit() {
-    if(this.selectedAlumnos.name == ""){this.alumnosArray.push(this.selectedAlumnos)
-        this.selectedAlumnos = new Alumnos();
-    }
+
+
+
+
+openOrEdit(alumnos: Alumnos){
+         this.selectedAlumnos= alumnos;
+        
+ }
+
+ addOrEdit() {
+  if(this.selectedAlumnos.id === 0){
+	  this.selectedAlumnos.id = this.alumnosArray.length +1;
+		this.alumnosArray.push(this.selectedAlumnos);
+       
+   }
 
     this.selectedAlumnos = new Alumnos();
 }
 
-
-
-openForEdit(alumnos: Alumnos){
-         this.selectedAlumnos= alumnos;
-         
- }
 
  delete(){
      if(confirm("Estas seguro de querer eliminarlo??")){

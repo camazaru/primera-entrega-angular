@@ -8,10 +8,10 @@
     <li
       *ngFor="let alumnos of alumnosArray"
       class="list-group-item list-group-item-action"
-      (click)="openForEdit(alumnos)"
+      (click)="openOrEdit(alumnos)"
       [class.active]="alumnos == selectedAlumnos"
       >
-     {{alumnos.name}} - {{alumnos.age}} - {{alumnos.birthplace}} - {{alumnos.status}} - {{alumnos.gendre}} 
+     {{alumnos.id}} - {{alumnos.name}} - {{alumnos.age}} - {{alumnos.birthplace}} - {{alumnos.status}} - {{alumnos.gendre}} 
     </li>
   </ul>
 </div>
@@ -45,7 +45,7 @@
    
     
       <button 
-      *ngIf="selectedAlumnos.name !== ''"
+      *ngIf="selectedAlumnos.id !== 0"
       mat-raised-button color="warn" 
       (click)="delete()">
       Eliminar</button>
